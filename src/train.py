@@ -1,7 +1,6 @@
 import os
 import numpy as np
 from vae import VAE
-from pathlib import Path
 
 # Train parameters
 LEARNING_RATE = 0.001
