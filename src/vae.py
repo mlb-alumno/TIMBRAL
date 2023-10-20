@@ -227,7 +227,7 @@ class VAE:
         return Input(shape=self.latent_space_dim, name="decoder_input")
 
     def _add_dense_layer(self, decoder_input):
-        num_neurons = np.prod(self._shape_before_bottleneck) # [1, 2, 4] -> 8
+        num_neurons = np.prod(self._shape_before_bottleneck) 
         dense_layer = Dense(num_neurons, name="decoder_dense")(decoder_input)
         return dense_layer
 
@@ -236,7 +236,6 @@ class VAE:
 
     def _add_conv_transpose_layers(self, x):
         """Adds the convolutional transpose blocks."""
-        # loop through all the conv layers in reverse order and stop at the first layer 
         for layer_index in reversed(range(1, self._num_conv_layers)):
             x = self._add_conv_transpose_layer(layer_index, x)
         return x
@@ -350,7 +349,8 @@ if __name__ == "__main__":
         latent_space_dim=128
     )
     autoencoder.summary()
-    #autoencoder.plot_model() uncomment all to plot model architecture
+    #autoencoder.plot_model()  
+    # uncomment plot_model() to plot model architecture
 
 
 
