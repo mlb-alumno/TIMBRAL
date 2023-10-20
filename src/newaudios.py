@@ -16,8 +16,8 @@ if runned: generates reconstructed audios of a batch of random audios from the d
 """
 
 HOP_LENGTH = 256
-SAVE_DIR_ORIGINAL = "samples/original/"
-SAVE_DIR_GENERATED = "samples/generated/"
+SAVE_DIR_ORIGINAL = "src/audio-tests/reconstructed-audios/try/original/"
+SAVE_DIR_GENERATED = "src/audio-tests/reconstructed-audios/try/generated/"
 SPECTROGRAMS_PATH = "fsdd/spectrograms/"
 MIN_MAX_VALUES_PATH = "fsdd/min_max_values.pkl"
 
@@ -55,7 +55,7 @@ class SoundGenerator:
             
             signals.append(signal)
         return signals
-    
+        
 
 
 
@@ -131,9 +131,9 @@ def spect_to_reconstructed_audio(spectrogram_path,min_max_values_path, generated
 if __name__ == "__main__":
     # Example of audios reconstructed by the model
 
-    
-    # Model and sound generated are loaded
-    vae = VAE.load("model/vae1200-150")
+
+    # Model and sound generator are loaded
+    vae = VAE.load("model/vae1200def-h")
     sound_generator = SoundGenerator(vae, HOP_LENGTH)
 
     # Spectrograms and min max values are loaded
