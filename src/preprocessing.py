@@ -116,7 +116,7 @@ class PreprocessingPipeline:
         self._loader = loader
         self._num_expected_samples = int(loader.sample_rate * loader.duration)
 
-    def process(self, audio_files_dir,file_limit=700):
+    def process(self, audio_files_dir,file_limit=699):
         for root, _, files in os.walk(audio_files_dir):
             for file in files[:file_limit]: # Change range for smaller set of data [:1200]
                 file_path = os.path.join(root, file)
@@ -178,7 +178,7 @@ if __name__ == "__main__":
 
     SPECTROGRAMS_SAVE_DIR = "fsdd/spectrograms/"
     MIN_MAX_VALUES_SAVE_DIR = "fsdd/"
-    FILES_DIR = "/Volumes/SOUND/_TIMBRAL/nsynth-train/audio"   # path of your sound files
+    FILES_DIR = "src/partial-dataset/"   # path of your sound files
 
 
     # instantiation of objects

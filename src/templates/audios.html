@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>TIMBRAL</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+
+<body>
+
+    {% block body %}
+    <div class="login-box">
+        
+        <h2>TIMBRAL</h2>
+        
+        <label>Sound 1</label>
+        <audio controls>
+            <source src="{{url_for('original1')}}" type="audio/wav">
+        </audio>
+        <label>Sound 2</label>
+        <audio controls>
+            <source src="{{url_for('original2')}}" type="audio/wav">
+        </audio>
+        <label>Interpolation</label>
+        <audio controls>
+            <source src="{{url_for('all')}}" type="audio/wav">
+        </audio>
+        
+        <div class="buttons">
+            <button class="btn-hover color-1" onclick="location.href='/download'">Download sounds</button>
+        </div>
+        <h2></h2>
+        <div class="buttons">
+            <button class="btn-hover color-1" onclick="location.href='/'">Go back</button>
+        </div>
+    </div>
+    {% endblock %}
+
+    
+    
+
+</body>
+
+</html>
